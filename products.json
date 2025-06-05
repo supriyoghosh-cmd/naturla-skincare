@@ -1,0 +1,692 @@
+[
+  {
+    "id": 1,
+    "name": "CeraVe Hydrating Cleanser For Dry Skin",
+    "featured": true,
+    "price": 39,
+    "discount": 10,
+    "rating": 4.5,
+    "reviewCount": 7341,
+    "size": 200,
+    "stock": 6,
+    "image": "../images/61pwYY8Hp7L._SX679_.jpg",
+    "thumbnails": [
+      "../images/61pwYY8Hp7L._SX679_.jpg",
+      "../images/71HvSNwmHuL._SX679_.jpg",
+      "../images/616t8tOAyvL._SX679_.jpg",
+      "../images/71IhhvYKnQL._SL1500_.jpg",
+      "../images/61Pji8lLnnL._SL1500_.jpg"
+    ],
+    "category": "Cleanser",
+    "skinType": "Dry Skin",
+    "description": "Non-Foaming Face Wash with Hyaluronic Acid And Ceramides | Non-Comedogenic, Non-Irritating And Fragrance-Free Cleanser",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Chemist at Play – Oil Control Wash",
+    "featured": true,
+    "price": 25,
+    "discount": 0,
+    "rating": 4,
+    "reviewCount": 2618,
+    "size": 100,
+    "image": "../images/615vyc2cR+L._SL1000_.jpg",
+    "thumbnails": [
+      "../images/615vyc2cR+L._SL1000_.jpg",
+      "../images/71tSHT0NVxL._SL1500_.jpg",
+      "../images/61GX-AgZaKL._SL1000_.jpg",
+      "../images/61ciJ8w8WcL._SL1000_.jpg",
+      "../images/61JWigSEByL._SL1000_.jpg"
+    ],
+    "category": "Cleanser",
+    "skinType": "Oily Skin",
+    "description": "Chemist at Play 2% Salicylic Acid Face Wash For Oily Skin with Niacinamide | Prevents Acne & Removes Excess Oil | Sulphate Free, Anti Acne Face Cleanser | For Men & Women",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Dot & Key Watermelon Gel Face Wash",
+    "price": 29,
+    "rating": 4.2,
+    "discount": 15,
+    "reviewCount": 3637,
+    "size": 100,
+    "image": "../images/614Jw+uAifL._SL1500_.jpg",
+    "thumbnails": [
+      "../images/614Jw+uAifL._SL1500_.jpg",
+      "../images/71nGc9BNuxL._SL1500_.jpg",
+      "../images/71JKRO834yL._SL1500_.jpg",
+      "../images/71os+a6ejhL._SL1500_.jpg",
+      "../images/71+9miQUezL._SL1500_.jpg"
+    ],
+    "category": "Cleanser",
+    "skinType": "Sensitive Skin",
+    "description": "Dot & Key Watermelon Cooling Gel Face Wash With Vitamin C & Cucumber | Face Wash For Glowing Skin|Oil Free |Removes Excess Oil & Dirt | For Combination & Oily Skin| For Women",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "La Roche-Posay Toleriane Purifying Foaming Cleanser",
+    "featured": true,
+    "price": 17.99,
+    "discount": 0,
+    "rating": 4.7,
+    "reviewCount": 6354,
+    "size": 3100,
+    "image": "../images/717F3ObzIeL._SL1500_.jpg",
+    "thumbnails": [
+      "../images/717F3ObzIeL._SL1500_.jpg",
+      "../images/91Ld5D6-isL._SL1500_.jpg",
+      "../images/91Ld5D6-isL._SL1500_.jpg",
+      "../images/71CdyhckYsL._SL1500_.jpg",
+      "../images/619raYG0qxL._SL1200_.jpg"
+    ],
+    "category": "Cleanser",
+    "skinType": "Normal Skin",
+    "description": "La Roche-Posay Toleriane Purifying Foaming Cleanser (For Sensitive Skin)",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Truth Be Told Radiating Face Cream",
+    "featured": true,
+    "price": 32.49,
+    "discount": 20,
+    "rating": 4.8,
+    "reviewCount": 1002,
+    "size": 50,
+    "image": "../images/41lVDyBKUlL._SL1200_.jpg",
+    "thumbnails": [
+      "../images/41lVDyBKUlL._SL1200_.jpg",
+      "../images/513OFZ1XbkL._SL1200_.jpg",
+      "../images/61ywYOfmBOL._SL1200_.jpg",
+      "../images/51lwx8G6YOL._SL1200_.jpg",
+      "../images/51AWDA-RujL._SL1200_.jpg"
+    ],
+    "category": "Cream",
+    "skinType": "Oily Skin",
+    "description": "Truth Be Told Skin Naturally Derived All Plant Radiating Face Cream with Grapes & Rose Water, Dark Spot Corrector & Skin Brightening Moisturizer, Free from parabens, silicones, mineral oils",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "The Face Shop Chia Seed Hydro Cream",
+    "featured": true,
+    "price": 25.78,
+    "discount": 10,
+    "rating": 4.6,
+    "reviewCount": 1334,
+    "size": 50,
+    "image": "../images/51dotoVjnrL._SL1000_.jpg",
+    "thumbnails": [
+      "../images/51dotoVjnrL._SL1000_.jpg",
+      "../images/611oPN8tK+L._SL1000_.jpg",
+      "../images/61O8UWuVuLL._SL1000_.jpg",
+      "../images/61XBtDxSunL._SL1000_.jpg",
+      "../images/61-GOYSMcwL._SL1000_.jpg"
+    ],
+    "category": "Cream",
+    "skinType": "Dry Skin",
+    "description": "The Face Shop Chia Seed Hydro Cream with Vitamin B12 & Chia Seeds | 24HR Intense Hydration Face Cream | For Intense Moisturization & Skin Barrier Protection | Korean Skin Care",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Oteria Go-To Skin Cream",
+    "featured": true,
+    "price": 17.97,
+    "discount": 15,
+    "rating": 4.5,
+    "reviewCount": 1334,
+    "size": 100,
+    "image": "../images/51MgqvAZ5fL._SL1100_.jpg",
+    "thumbnails": [
+      "../images/51MgqvAZ5fL._SL1100_.jpg",
+      "../images/61HfNzxjQNL._SL1100_.jpg",
+      "../images/61pjVse6Z9L._SL1100_.jpg",
+      "../images/51feGS6QNEL._SL1100_.jpg",
+      "../images/715y+S0zHHL._SL1500_.jpg"
+    ],
+    "category": "Cream",
+    "skinType": "Sensitive Skin",
+    "description": "Oteria Go-To Skin Cream (50Gm) | Face Cream For Glowing Skin | Brightening Face Cream For Women | For Sensitive Skin",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Swiss Image Absolute Radiance Day Cream",
+    "featured": true,
+    "price": 11.07,
+    "discount": 0,
+    "rating": 5,
+    "reviewCount": 4526,
+    "size": 50,
+    "image": "../images/711gHvugxML._SL1500_.jpg",
+    "thumbnails": [
+      "../images/711gHvugxML._SL1500_.jpg",
+      "../images/719IlP7qLdL._SL1500_.jpg",
+      "../images/71gMlJD6qaL._SL1500_.jpg",
+      "../images/71lWakDYOvL._SL1500_.jpg",
+      "../images/71iH7oOwRrL._SL1500_.jpg"
+    ],
+    "category": "Cream",
+    "skinType": "Normal Skin",
+    "description": "Swiss Image Absolute Radiance Day Cream | Face Moisturizer | Hydrating & Brightening | Reduces Dark Spots & Pigmentation | Lightweight & Quick Absorption | SPF 20 | For All Skin Types",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Repechage Hyaluronic Acid Face Moisturizer Lift Serum",
+    "featured": true,
+    "price": 94.50,
+    "discount": 0,
+    "rating": 5,
+    "reviewCount": 10232,
+    "size": 50,
+    "image": "../images/417iRM5oETL._SL1200_.jpg",
+    "thumbnails": [
+      "../images/417iRM5oETL._SL1200_.jpg",
+      "../images/61yXfBxrI8L._SL1200_.jpg",
+      "../images/61LzareEhoL._SL1000_.jpg",
+      "../images/61nFOLLsy+L._SL1000_.jpg",
+      "../images/61CH6g+-54L._SL1000_.jpg"
+    ],
+    "category": "Serum",
+    "skinType": "Dry Skin",
+    "description": "Repechage Hyaluronic Acid Face Moisturizer Lift Serum for Dry to Compromised Skin with. Hydra Dew Pure Facial Moisturizing Serum Reduce Fine Lines & Wrinkles. Moisture Your Skin",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Mario Badescu Vitamin C Serum",
+    "featured": true,
+    "price": 46.68,
+    "discount": 10,
+    "rating": 4.9,
+    "reviewCount": 1572,
+    "size": 30,
+    "image": "../images/514aHjQ9RFL._SL1500_.jpg",
+    "thumbnails": [
+      "../images/514aHjQ9RFL._SL1500_.jpg",
+      "../images/61EhVL640QL._SL1500_.jpg",
+      "../images/51wNpFam80L._SL1500_.jpg",
+      "../images/81O+cDowWUL._SL1500_.jpg",
+      "../images/51cjo0TbHvL._SL1500_.jpg"
+    ],
+    "category": "Serum",
+    "skinType": "Oily Skin",
+    "description": "MARIO BADESCU SKIN CARE Vitamin C Serum For All Skin Types, Lightweight Facial Serum With Vitamin C & Sodium Hyaluronate, Reduces Signs Of Aging Skin",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Super Serum Advance+",
+    "featured": true,
+    "price": 112.96,
+    "discount": 10,
+    "rating": 4.7,
+    "size": 15,
+    "reviewCount": 932,
+    "image": "../images/51xzyXMkk4L._SL1500_.jpg",
+    "thumbnails": [
+      "../images/51xzyXMkk4L._SL1500_.jpg",
+      "../images/6156u8i5MxL._SL1500_.jpg",
+      "../images/61u4uC9iH4L._SL1500_.jpg",
+      "../images/71dm-4bgOXL._SL1500_.jpg",
+      "../images/71MLgq8lF4L._SL1500_.jpg"
+    ],
+    "category": "Serum",
+    "skinType": "Sensitive Skin",
+    "description": "Super Serum Advance+ - iS Clinical - Night Care",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "R.O.A Skincare BRIGHT 10% Vitamin C face serum for women",
+    "featured": true,
+    "price": 7.69,
+    "discount": 14,
+    "rating": 4.8,
+    "reviewCount": 216,
+    "size": 30,
+    "image": "../images/419Vg1PziXL.jpg",
+    "thumbnails": [
+      "../images/419Vg1PziXL.jpg",
+      "../images/51HKI2pr6NL.jpg",
+      "../images/71EJjgdER7L._SL1500_.jpg",
+      "../images/714arwGR1UL._SL1500_.jpg",
+      "../images/710IUK0mv0L._SL1500_.jpg"
+    ],
+    "category": "Serum",
+    "skinType": "Normal Skin",
+    "description": "R.O.A Skincare BRIGHT 10% Vitamin C face serum for women | Brightening glow Vitamin C face serum for dry sensitive or combination skin with Orange, Kakadu plum and Camu Camu extract",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "TIA'M Sunscreen SPF 50+ PA++++",
+    "featured": true,
+    "price": 17.49,
+    "discount": 0,
+    "rating": 3.8,
+    "reviewCount": 234,
+    "size": 50,
+    "image": "../images/51myXQfopnL._SL1080_.jpg",
+    "thumbnails": [
+      "../images/51myXQfopnL._SL1080_.jpg",
+      "../images/61M3wdX1E2L._SL1500_.jpg",
+      "../images/71KqnCiGetL._SL1500_.jpg",
+      "../images/71LnWrwR2XL._SL1500_.jpg",
+      "../images/616vmC8wsOL._SL1500_.jpg"
+    ],
+    "category": "Sunscreen",
+    "skinType": "Dry Skin",
+    "description": "TIA'M Sunscreen SPF 50+ PA++++ with Niacinamide for Dry and Combination Skin helps with Sun Protection, Dark Spots, Brightening, Anti Aging",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Novology SPF 50 PA++++ Hydrating Sheer Sunscreen",
+    "featured": true,
+    "price": 5.85,
+    "discount": 16,
+    "rating": 3.5,
+    "reviewCount": 25,
+    "size": 50,
+    "image": "../images/41gKvlUgfKL._SL1000_.jpg",
+    "thumbnails": [
+      "../images/41gKvlUgfKL._SL1000_.jpg",
+      "../images/61og4VJ5w-L._SL1000_.jpg",
+      "../images/51934XlcdcL._SL1000_.jpg",
+      "../images/61QGUaZj4nL._SL1000_.jpg",
+      "../images/51d-n1767QL._SL1000_.jpg"
+    ],
+    "category": "Sunscreen",
+    "skinType": "Normal Skin",
+    "description": "Novology SPF 50 PA++++ Hydrating Sheer Sunscreen With Niacinamide for Dry Skin| No White Cast, Non Sticky",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Minimalist Light Fluid Sunscreen SPF 50 for Oily Skin (PA++++)",
+    "featured": true,
+    "price": 5.82,
+    "discount": 5,
+    "rating": 4.2,
+    "reviewCount": 823,
+    "size": 50,
+    "image": "../images/510ppdcOpaL._SL1200_.jpg",
+    "thumbnails": [
+      "../images/510ppdcOpaL._SL1200_.jpg",
+      "../images/71KvWAfdpjL._SL1500_.jpg",
+      "../images/717-V97uMsL._SL1500_.jpg",
+      "../images/71d+LcH94dL._SL1500_.jpg",
+      "../images/713JTvQI9JL._SL1500_.jpg"
+    ],
+    "category": "Sunscreen",
+    "skinType": "Oily Skin",
+    "description": "Minimalist Light Fluid Sunscreen SPF 50 for Oily Skin (PA++++) | Clinically Tested in US| No White Cast | Broad Spectrum | Lightweight, Water & Sweat Resistant | For Men",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Cetaphil Sun SPF 50 Sunscreen",
+    "featured": true,
+    "price": 13.79,
+    "discount": 14,
+    "rating": 5,
+    "reviewCount": 2727,
+    "size": 50,
+    "image": "../images/51zZytNPqhL._SL1500_.jpg",
+    "thumbnails": [
+      "../images/51zZytNPqhL._SL1500_.jpg",
+      "../images/41av5Vk+uKL._SL1000_.jpg",
+      "../images/619yuJPCCbL._SL1000_.jpg",
+      "../images/61Z7JaFfiSL._SL1000_.jpg",
+      "../images/61EVC5ipO5L._SL1500_.jpg"
+    ],
+    "category": "Sunscreen",
+    "skinType": "Normal Skin",
+    "description": "Cetaphil Sun SPF 50 Sunscreen For Combination Skin Type, Very High Protection Lightweight Gel, Water-resistant, Vitamin E",
+    "details": "Wake up to radiant skin. This brightening night cream works while you sleep to fade dark spots, even tone, and deeply hydrate. Packed with natural brighteners and antioxidants, it restores glow without feeling heavy. Gentle, effective, and perfect for all skin types.",
+    "benefits": [
+      "Fades dark spots and hyperpigmentation",
+      "Deeply hydrates while you sleep",
+      "Improves skin texture and tone",
+      "Contains natural brightening ingredients",
+      "Non-greasy formula"
+    ],
+    "howToUse": [
+      "Apply every night after cleansing",
+      "Take a small amount and massage gently onto face and neck",
+      "Use alone or follow with your favorite moisturizer",
+      "For best results, use consistently for 4-6 weeks"
+    ],
+    "ingredients": [
+      "Niacinamide (Vitamin B3)",
+      "Licorice Root Extract",
+      "Hyaluronic Acid",
+      "Vitamin E",
+      "Jojoba Oil",
+      "Aloe Vera"
+    ]
+  }
+]
+
+

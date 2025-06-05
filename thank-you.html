@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmation | YourStore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/thank-you.css" />
+</head>
+<body>
+  <div class="confirmation-container">
+    <!-- Animated checkmark -->
+    <div class="confirmation-animation">
+      <svg class="checkmark" viewBox="0 0 52 52">
+        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+      </svg>
+    </div>
+
+    <h1>Order Confirmed!</h1>
+    <p class="confirmation-subtitle">Thank you for your purchase, <span id="customer-name"></span>!</p>
+
+    <!-- Order Summary Card -->
+    <div class="order-card">
+      <div class="order-header">
+        <h2 id="order-number">Order #</h2>
+        <p id="order-date"></p>
+      </div>
+
+      <div class="order-details-grid">
+        <div class="detail-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Confirmation Sent To</h3>
+            <p id="customer-email">—</p>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <i class="fas fa-credit-card"></i>
+          <div>
+            <h3>Payment Method</h3>
+            <p id="payment-method">—</p>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <i class="fas fa-truck"></i>
+          <div>
+            <h3>Shipping Method</h3>
+            <p id="shipping-method">—</p>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <i class="fas fa-calendar-day"></i>
+          <div>
+            <h3>Estimated Delivery</h3>
+            <p id="delivery-date">—</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-total">
+        <h3>Total Paid</h3>
+        <p id="order-total">$0.00</p>
+      </div>
+    </div>
+
+    <!-- Order Items List -->
+    <div class="order-items-section">
+      <h3>Your Order Details</h3>
+      <div id="order-items-list" class="items-list">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="action-buttons">
+      <a href="/" class="btn-primary">
+        <i class="fas fa-home"></i> Continue Shopping
+      </a>
+    </div>
+
+    <!-- Support Info -->
+    <div class="support-info">
+      <h3>Need Help?</h3>
+      <p>Contact our customer support at <a href="mailto:support@yourstore.com">support@yourstore.com</a></p>
+    </div>
+  </div>
+
+  <script src="./js/thank-you.js"></script>
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Page Title -->
+    <title>Naturla</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+
+    <!-- Optional: Your Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/wishlist.css">
+    <style>
+      .subtitle {
+          color: #666;
+          margin-bottom: 30px;
+      }
+
+      .tabs {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 30px;
+          flex-wrap: wrap;
+          gap: 10px;
+      }
+
+      .tab-btn {
+          padding: 12px 25px;
+          background: #fff;
+          border: none;
+          border-radius: 30px;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #555;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      .tab-btn:hover {
+          background: #f0f0f0;
+      }
+
+      .tab-btn.active {
+          background: #cf0115;
+          color: white;
+      }
+
+      .tab-content {
+          display: none;
+          padding: 20px 0 0 0;
+      }
+
+      .tab-content.active {
+          display: block;
+      }
+
+      .products-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 25px;
+      }
+      /* ========== */
+      .sidebar_overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 998;
+        display: none;
+      }
+
+      .sidebar_overlay.show {
+        display: block;
+      }
+
+      .no-scroll {
+        overflow: hidden;
+      }
+  </style>
+  </head>
+
+  <body>
+    <!-- HEADER SECTION -->
+    <nav class="navbar bg-white border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+          <!-- Brand -->
+          <a class="navbar-brand" href="index.html">
+            <img src="./images/logo-new.png" alt="Logo">
+          </a>
+    
+          <!-- Desktop Nav -->
+          <div class="d-none d-lg-flex nav_menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="shop.html" class="nav-link">Shop</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </div>
+    
+          <!-- Right Icons -->
+          <div class="d-flex align-items-center">
+            <img src="./images/magnifying-glass.svg" class="searchHeader" alt="search">
+            <a href="javascript:void(0)" class="icon-btn position-relative" onclick="toggleWishlistSidebar()">
+              <img src="./images/heart.svg" class="wishList" alt="wishlist">
+              <div class="cart-badge" id="wishlist-info"></div>
+            </a>
+            <a href="cart.html" class="icon-btn position-relative">
+              <img src="./images/shopping-cart-simple.svg" alt="cart">
+              <div class="cart-badge" id="cart-info"></div>
+            </a>
+            <!-- Hamburger (Mobile Only) -->
+            <button class="hamburger ms-3" onclick="toggleSidebar()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebarMenu">
+        <div class="d-flex justify-content-end">
+          <span class="close-btn" id="closeSidebarBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </span>
+        </div>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="sidebarOverlay"></div>
+    <!-- HEADER SECTION end -->
+
+    <!-- Hero Section start -->
+    <section class="hero-section d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center h-100 banner_row">
+          <!-- Text Content -->
+          <div class="col-md-6 text-content banner_cont">
+            <h1>Reveal Your<br><span>Radiance Naturally</span></h1>
+            <p>Brighten dull skin, fade dark spots, and unlock your natural glow with clean, plant-powered skincare.</p>
+            <a href="shop.html" class="btn btn-primary shop-btn">SHOP NOW</a>
+          </div>
+    
+          <!-- Image Content -->
+          <div class="col-md-6 position-relative text-center banner_image">
+            <img src="./images/hero-image-new.png" alt="hero image">
+          </div>
+        </div>
+      </div>
+    </section>    
+    <!-- Hero Section end -->
+
+    <!-- Achivment section start -->
+    <section class="achievement-section">
+      <div class="container achievement-container">
+        <div class="achievement-box">
+          <h3>100k<sup>+</sup></h3>
+          <p>Satisfied Customer<br>worldwide</p>
+        </div>
+        <div class="achievement-box">
+          <h3>15<sup>+</sup></h3>
+          <p>Years of Experience<br>caring for skin</p>
+        </div>
+        <div class="achievement-box">
+          <h3>19</h3>
+          <p>Global Skincare<br>certifications</p>
+        </div>
+        <div class="achievement-box">
+          <h3>60</h3>
+          <p>Staff members<br>across 3 continents</p>
+        </div>
+        <div class="achievement-box">
+          <h3>30<sup>+</sup></h3>
+          <p>National and Global<br>Awards received</p>
+        </div>
+      </div>
+    </section>    
+    <!-- Achivment section end -->
+
+    <!-- Our Story Section start -->
+    <section class="our-story-section">
+      <div class="container our-story-container">
+        <div class="story-image">
+          <img src="./images/our-story-image.png" alt="Our Story Image">
+        </div>
+        <div class="story-text">
+          <h2>Our Story</h2>
+          <p>
+            At <strong><span class="brand-name">Naturla</span></strong>, we believe glowing skin starts with real care. 
+            Born from a passion for gentle, effective skincare, our brightening range blends science-backed ingredients 
+            with nature’s best to even tone, fade dark spots, and boost radiance.<br><br>
+            No harsh chemicals. No empty promises. Just clean, confident skin—every day.
+          </p>
+          <a href="about.html" class="btn btn-primary our-story-btn">Learn More About Our Story</a>
+        </div>
+      </div>
+    </section>    
+    <!-- Our Story Section end -->
+
+    <!-- Best Selling section start -->
+     <section class="best_selling">
+      <div class="container">
+        <div class="best_selling_heading">
+          <h2>Shop Our Best-Selling, Most In-Demand Product Today!</h2>
+          <p>Loved by our customers and trusted for results, this best- selling product is in high demand for a reason. Formulated with powerful, skin-loving ingredients, it delivers visible results you can feel confident in. Don't miss out experience the product everyone's talking about.</p>
+        </div>
+        <div class="best_selling_products">
+          <div id="featured-products" class="product-grid bestSelling_products"></div>
+        </div>
+      </div>
+     </section>
+    <!-- Best Selling section end -->
+
+    <!-- Benefits section start -->
+     <section class="benefits">
+      <div class="container">
+        <div class="benefits_cont">
+          <div class="benefits_left">
+            <img src="./images/benefits-img.png" alt="Benefits img">
+          </div>
+          <div class="benefits_right">
+            <h2>Benefit Using Our Product</h2>
+            <p>Begin your journey to radiant skin — powered by nature, perfected by care.</p>
+            <div class="benefits_points">
+              <div class="benefit_box">
+                <img src="./images/benefit-icon1.png" alt="img">
+                <h3>100% Natural</h3>
+                <p>Your Path to Flawless Skin Starts Here.
+                  Harness the Power of Nature for</p>
+              </div>
+              <div class="benefit_box">
+                <img src="./images/benefit-icon2.png" alt="img">
+                <h3>No Side Effect</h3>
+                <p>Gentle on skin, tough on problems — with zero harsh side effects.</p>
+              </div>
+              <div class="benefit_box">
+                <img src="./images/benefit-icon3.png" alt="img">
+                <h3>Healthy Skin</h3>
+                <p>Nourish your skin for a clear, balanced, healthy glow — naturally.</p>
+              </div>
+              <div class="benefit_box">
+                <img src="./images/benefit-icon4.png" alt="img">
+                <h3>Fastest Refreshment</h3>
+                <p>Instantly hydrates and refreshes skin. Enjoy a fresh, radiant glow in seconds.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+    <!-- Benefits section end -->
+
+    <!-- Tabs Product section stert -->
+     <!-- <section class="all_product">
+      <div class="container">
+        <h2 class="section_title">Our Products</h2>
+        <p class="section_desc">Clean, effective skincare that nourishes deeply and reveals your <br> natural glow- from the inside out.</p>
+        <div class="allProduct_area">
+          <div id="product-list"></div>
+        </div>
+      </div>
+     </section> -->
+     <section class="tabsProduct">
+       <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">Skin Care Products</h2>
+            <p class="subtitle">Clean, effective skincare that nourishes deeply and reveals your <br> natural glow- from the inside out.</p>
+        </div>
+  
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="dry">Cleanser</button>
+            <button class="tab-btn" data-tab="oily">Cream</button>
+            <button class="tab-btn" data-tab="sensitive">Serum</button>
+            <button class="tab-btn" data-tab="combination">Sunscreen</button>
+        </div>
+  
+        <div id="dry" class="tab-content active">
+            <div id="dry-products" class="products-grid"></div>
+        </div>
+  
+        <div id="oily" class="tab-content">
+            <div id="oily-products" class="products-grid"></div>
+        </div>
+  
+        <div id="sensitive" class="tab-content">
+            <div id="sensitive-products" class="products-grid"></div>
+        </div>
+  
+        <div id="combination" class="tab-content">
+            <div id="combination-products" class="products-grid"></div>
+        </div>
+       </div>
+     </section>
+    <!-- Tabs Product section end -->
+
+    <!-- Testimonial start -->
+    <section class="customer-section">
+      <div class="container">
+        <h2 class="section-title">Our Happy Customers</h2>
+        <p class="section-subtitle">
+            See how Naturia is transforming skincare routines and boosting confidence — one glowing face at a time.
+            Join thousands who trust us for gentle, effective, and radiant skin.
+        </p>
+  
+        <div class="owl-carousel owl-theme testimonial-slider">
+            <div class="item">
+                <div class="testimonial-card">
+                    <div class="customer-info">
+                        <img src="./images/linda.png" alt="Linda" class="customer-image">
+                        <div>
+                            <p class="testimonial-text">
+                              <strong>“Naturla brightened my skin in just two weeks — I’m absolutely obsessed!</strong> My dark spots are fading fast, and my skin looks smoother, clearer, and more even than ever. The texture is silky-light, absorbs in seconds, and leaves my face feeling fresh and nourished. Finally — a product that delivers real results without a single sign of irritation.”
+                            </p>
+                        </div>
+                    </div>
+                    <div class="customer_rating">
+                      <div class="customerName">
+                        <div class="customer-name">Linda -</div>
+                        <div class="customer-details">Combination Skin</div>
+                      </div>
+                      <div class="star-rating">
+                        <img src="./images/star-rating.png" alt="">
+                      </div>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="item">
+                <div class="testimonial-card">
+                    <div class="customer-info">
+                        <img src="./images/jaqueline.png" alt="Jacqueline" class="customer-image">
+                        <div>
+                          <p class="testimonial-text">
+                            <strong>“Naturla brightened my skin in just two weeks — I’m absolutely obsessed!</strong> My dark spots are fading fast, and my skin looks smoother, clearer, and more even than ever. The texture is silky-light, absorbs in seconds, and leaves my face feeling fresh and nourished. Finally — a product that delivers real results without a single sign of irritation.”
+                          </p>
+                        </div>
+                    </div>
+                    <div class="customer_rating">
+                      <div class="customerName">
+                        <div class="customer-name">Jacqueline -</div>
+                        <div class="customer-details">Dry Skin</div>
+                      </div>
+                      <div class="star-rating">
+                        <img src="./images/star-rating.png" alt="">
+                      </div>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="item">
+                <div class="testimonial-card">
+                    <div class="customer-info">
+                        <img src="./images/linda.png" alt="Sarah" class="customer-image">
+                        <div>
+                          <p class="testimonial-text">
+                            <strong>“Naturla brightened my skin in just two weeks — I’m absolutely obsessed!</strong> My dark spots are fading fast, and my skin looks smoother, clearer, and more even than ever. The texture is silky-light, absorbs in seconds, and leaves my face feeling fresh and nourished. Finally — a product that delivers real results without a single sign of irritation.”
+                          </p>
+                        </div>
+                    </div>
+                    <div class="customer_rating">
+                      <div class="customerName">
+                        <div class="customer-name">Sarah -</div>
+                        <div class="customer-details">Sensitive Skin</div>
+                      </div>
+                      <div class="star-rating">
+                        <img src="./images/star-rating.png" alt="">
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <div class="owl-nav">
+            <button class="owl-prev">
+              <img src="./images/previous-arrow.png" alt="">
+            </button> <button class="owl-next">
+              <img src="./images/next-arrow.png" alt="">
+            </button> 
+        </div>
+      </div>
+  </section>
+    <!-- Testimonial end -->
+
+    <!-- FAQ section start -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq_cont">
+          <div class="faq-header">
+              <h2>Got Skincare Questions? Check Out Our FAQ <span> for Answers.</span></h2>
+              <p>Looking for more info about our products or skincare tips? Our FAQ has all the answers you need, from ingredient details to application tips. Find the information you need to make the best choices for your skin.</p>
+          </div>
+          
+          <div class="faq-accordion">
+              <div class="faq-item">
+                  <div class="faq-question">What results can I expect from Naturia Skin Brightening Cream?</div>
+                  <div class="faq-answer">
+                      <p>Our Skin Brightening Cream helps reduce the appearance of dark spots, evens out skin tone, and enhances natural radiance. Most users see visible results within 4-6 weeks of regular use.</p>
+                  </div>
+              </div>
+              
+              <div class="faq-item">
+                  <div class="faq-question">Is it safe for all skin types?</div>
+                  <div class="faq-answer">
+                      <p>Yes! Naturia is dermatologist-tested and gentle enough for all skin types, including sensitive skin.</p>
+                  </div>
+              </div>
+              
+              <div class="faq-item">
+                  <div class="faq-question">How often should I apply it?</div>
+                  <div class="faq-answer">
+                      <p>For best results, apply twice daily - in the morning after cleansing and at night before bed. Always follow with sunscreen during daytime use.</p>
+                  </div>
+              </div>
+              
+              <div class="faq-item">
+                  <div class="faq-question">Does it contain any harmful ingredients?</div>
+                  <div class="faq-answer">
+                      <p>Absolutely not. Our products are free from parabens, sulfates, phthalates, synthetic fragrances, and other harsh chemicals. We use only natural and clinically-proven safe ingredients.</p>
+                  </div>
+              </div>
+              
+              <div class="faq-item">
+                  <div class="faq-question">Will it make my skin lighter or just brighter?</div>
+                  <div class="faq-answer">
+                      <p>Our products are designed to enhance your natural skin tone by reducing discoloration and promoting an even complexion, not to lighten your natural skin color. The result is a healthier, more radiant version of your skin.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  </section>
+    <!-- FAQ section end -->
+
+    <!-- Discount section start -->
+     <section class="discountArea">
+      <div class="wrapper">
+        <div class="discountTags">
+          <p class="target">Get Discount Up To 25%</p>
+          <img src="./images/discount_section_star.png" alt="">
+          <p class="target">Get Discount Up To 25%</p>
+          <img src="./images/discount_section_star.png" alt="">
+          <p class="target">Get Discount Up To 25%</p>
+          <img src="./images/discount_section_star.png" alt="">
+          <p class="target">Get Discount Up To 25%</p>
+          <img src="./images/discount_section_star.png" alt="">
+          <p class="target">Get Discount Up To 25%</p>
+          <img src="./images/discount_section_star.png" alt="">
+          <p class="target">Get Discount Up To 25%</p>
+          <img src="./images/discount_section_star.png" alt="">
+        </div>
+      </div>
+     </section>
+    <!-- Discount section end -->
+
+    <!-- Footer section start -->
+    <footer class="main-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-4 col-md-4 mb-lg-0 text-center text-lg-start">
+                  <div class="footer-logo">
+                    <img src="./images/logo-new.png" alt="">
+                  </div>
+                  <p class="footer-description mx-auto mx-lg-0">
+                      Clean, effective brightening care designed to nourish, even tone, and reveal radiant skin — naturally.
+                  </p>
+                  <ul class="contact-info">
+                      <li><i class="fa-solid fa-phone"></i><a href="tel:1 (800) 123 4321">+1 (800) 123 4321</a></li>
+                      <li><img src="./images/email-footer-icon.png" alt="email"> <a href="mailto:test369@naturla.com">test369@naturla.com</a></li>
+                      <li><img src="./images/location-footer-icon.png" alt="location"> 75 3rd Ave, New York, NY 10003, USA</li>
+                  </ul>
+              </div>
+
+              <div class="col-lg-2 col-md-3 mb-4 mb-lg-0 text-lg-start footerMenu">
+                  <h5 class="footer-links-title">Quick Menu</h5>
+                  <ul class="footer-links">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="shop.html">Shop</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+              </div>
+
+              <div class="col-lg-2 col-md-3 mb-4 mb-md-0 text-lg-start footerMenu">
+                  <h5 class="footer-links-title">Legal</h5>
+                  <ul class="footer-links">
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Terms of Use</a></li>
+                  </ul>
+              </div>
+
+              <div class="col-lg-2 col-md-2 text-lg-start footerMenu">
+                  <h5 class="footer-links-title">Help</h5>
+                  <ul class="footer-links">
+                      <li><a href="#faq">FAQs</a></li>
+                      <li><a href="#">Blogs</a></li>
+                      <li><a href="#">Achievements</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-2 col-md-3 text-lg-start footerMenu">
+                <div class="social-icons mt-4 justify-content-center justify-content-lg-start">
+                  <a href="#" class="social-icon"><img src="./images/facebook.png" alt="facebook"></a>
+                  <a href="#" class="social-icon"><img src="./images/instagram.png" alt="instagram"></a>
+                  <a href="#" class="social-icon"><img src="./images/twitter.png" alt="twitter"></a>
+              </div>
+              <div class="app-download-buttons mt-3">
+                  <a href="#">
+                    <img src="./images/app-store-button.png" alt="App Store">
+                  </a>
+                  <a href="#">
+                    <img src="./images/play-store-button.png" alt="Play Store">
+                  </a>
+              </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <div class="copyright-footer">
+      <div class="container">
+          Copyright &copy;2025 Naturla, All Rights Reserved
+      </div>
+  </div>
+    <!-- Footer section end -->
+
+    <div class="wishlist-sidebar" id="wishlistSidebar">
+      <div class="wishlist-header">
+          <h3>My Wishlist</h3>
+          <button class="close-btn" onclick="toggleWishlistSidebar()">
+              <i class="fas fa-times"></i>
+          </button>
+      </div>
+      <div id="wishlist-items" class="wishlist-items">
+          <!-- Wishlist items will be populated here -->
+      </div>
+  </div>
+  <div class="overlay" id="overlay" onclick="toggleWishlistSidebar()"></div>
+    
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Optional: Your Custom Scripts -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/shop.js"></script>
+    <script src="./js/wishlist.js"></script>
+  </body>
+</html>
