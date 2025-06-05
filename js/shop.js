@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <a href="product.html?id=${p.id}" class="view-product">View Product</a>
           <button class="add-btn">
-            <img src="../images/add-to-cart-btn.png" class="shopping_bag" />
+            <img src="https://supriyoghosh-cmd.github.io/naturla-skincare/images/add-to-cart-btn.png" class="shopping_bag" />
           </button>
         </div>
       `;
