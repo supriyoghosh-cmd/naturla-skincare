@@ -244,8 +244,8 @@ body {
 }
 
 .item-image {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     flex-shrink: 0;
     border-radius: 8px;
     overflow: hidden;
@@ -303,8 +303,12 @@ body {
 
 .item-subtotal {
     margin-top: 0.25rem;
-    font-weight: 500;
+    font-weight: bold;
     color: var(--text);
+    font-size: 1rem;
+}
+.item-details {
+    text-align: left;
 }
 
 /* Responsive */
@@ -325,5 +329,16 @@ body {
     .btn-primary, .btn-secondary {
         /* width: 100%; */
         justify-content: center;
+    }
+}
+
+@media (max-width: 480.98px) {
+    .item-image {
+        width: 70px;
+        height: 70px;
+    }
+    .order-item {
+        flex-direction: column;
+        gap: 12px;
     }
 }
