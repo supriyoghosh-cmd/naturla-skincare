@@ -479,6 +479,81 @@ img.craditCard_img {
   input:invalid {
     border-color: var(--discount-color);
   }
+
+
+  /* ============================ */
+  /* Promo code input styling */
+.promo-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.promo-input input {
+  flex: 1;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.promo-input .apply-btn {
+  background-color: #cf0115;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.promo-input .apply-btn:hover {
+  background-color: #a40010;
+}
+
+/* Promo showcase section */
+.promo-showcase {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.promo-showcase h5 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.promo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.promo-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.copy-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: #000;
+}
   
   /* Responsive Styles */
   @media (max-width: 48rem) { /* 768px */
