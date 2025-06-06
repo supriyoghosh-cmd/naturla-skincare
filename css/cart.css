@@ -9,6 +9,7 @@ h1.cartTitle {
     font-weight: 600;
     color: #000;
     margin-bottom: 30px;
+    text-align: center;
 }
 .cartCont {
     display: flex;
