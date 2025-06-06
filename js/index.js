@@ -203,24 +203,17 @@ function loadProducts() {
       // Display featured products
       const featuredContainer = document.getElementById('featured-products');
       if (featuredContainer) {
-        // Define the exact order of product IDs you want to display
-        const featuredProductOrder = [1, 2, 7, 4];
+        const featuredProductIds = getFeaturedProductIds(products, 4);
 
-        // Create a map for quick product lookup
         const productMap = {};
         products.forEach(product => {
           productMap[product.id] = product;
         });
 
-        // Get products in the exact order specified
-        const orderedProducts = featuredProductOrder
+        const orderedProducts = featuredProductIds
           .map(id => productMap[id])
-          .filter(product => product); // Filter out undefined in case ID doesn't exist
-
-        // Clear existing content (if any)
+          .filter(product => product); // Filter out undefined if any ID is invalid
         featuredContainer.innerHTML = '';
-
-        // Add products to container in specified order
         orderedProducts.forEach(product => {
           featuredContainer.appendChild(createProductCard(product));
         });
@@ -237,6 +230,33 @@ function loadProducts() {
     .catch(error => {
       console.error('Error loading products:', error);
     });
+}
+
+function getFeaturedProductIds(productList, count = 4) {
+  const storageKey = 'featuredProductSelection';
+  const saved = JSON.parse(localStorage.getItem(storageKey));
+  const now = new Date();
+
+  if (saved && saved.timestamp) {
+    const savedTime = new Date(saved.timestamp);
+    const timeDiff = (now - savedTime) / 1000; // seconds
+
+    if (timeDiff < 60 && Array.isArray(saved.ids)) {
+      return saved.ids; // reuse if less than 1 minute has passed
+    }
+  }
+
+  // Pick new random unique product IDs
+  const shuffled = [...productList].sort(() => 0.5 - Math.random());
+  const selected = shuffled.slice(0, count).map(p => p.id);
+
+  // Save new selection
+  localStorage.setItem(storageKey, JSON.stringify({
+    ids: selected,
+    timestamp: now.toISOString()
+  }));
+
+  return selected;
 }
 
 // Toggle mobile sidebar (if needed)
