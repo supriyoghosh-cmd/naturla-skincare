@@ -20,22 +20,52 @@
 //   });
 // });
 
-// // Input restrictions
+// // Input restrictions and validation
+// function validateField(id, isValid) {
+//   const input = document.getElementById(id);
+//   const icon = document.getElementById(`icon-${id}`);
+//   if (!input || !icon) return;
+
+//   input.classList.remove('valid', 'invalid');
+//   icon.classList.remove('valid', 'invalid');
+
+//   if (isValid) {
+//     input.classList.add('valid');
+//     icon.classList.add('valid');
+//     icon.innerHTML = '✔';
+//   } else {
+//     input.classList.add('invalid');
+//     icon.classList.add('invalid');
+//     icon.innerHTML = '✖';
+//   }
+// }
 
 // document.getElementById('card-name')?.addEventListener('input', function () {
 //   this.value = this.value.replace(/[0-9]/g, '');
+//   validateField('card-name', /^[A-Za-z\s]{2,}$/.test(this.value));
+// });
+
+// document.getElementById('email')?.addEventListener('input', function () {
+//   const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
+//   validateField('email', valid);
 // });
 
 // document.getElementById('card-number')?.addEventListener('input', function () {
 //   this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').substring(0, 19);
+//   const valid = this.value.replace(/\s/g, '').length === 16;
+//   validateField('card-number', valid);
 // });
 
 // document.getElementById('expiry')?.addEventListener('input', function () {
 //   this.value = this.value.replace(/\D/g, '').replace(/(\d{2})(?=\d)/g, '$1/').substring(0, 5);
+//   const valid = isValidExpiry(this.value);
+//   validateField('expiry', valid);
 // });
 
 // document.getElementById('cvv')?.addEventListener('input', function () {
 //   this.value = this.value.replace(/\D/g, '').substring(0, 4);
+//   const valid = /^[0-9]{3,4}$/.test(this.value);
+//   validateField('cvv', valid);
 // });
 
 // function isValidExpiry(expiry) {
@@ -181,13 +211,13 @@
 // renderCheckout();
 
 
-
-// checkout.js
 const checkoutContainer = document.getElementById('checkout-container');
 const totalElem = document.getElementById('total-checkout-price');
 const confirmMessage = document.getElementById('confirmation-message');
 const confirmBtn = document.getElementById('confirm-checkout');
 const deliveryOptions = document.querySelectorAll('.delivery-option');
+const checkoutMain = document.querySelector('.checkout-main');
+const checkoutGrid = document.querySelector('.checkout-grid');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let deliveryCharge = 20.00;
@@ -260,21 +290,34 @@ function isValidExpiry(expiry) {
 }
 
 function renderCheckout() {
+  // Remove any existing empty cart message
+  const existingEmpty = document.getElementById('empty-cart-message');
+  if (existingEmpty) existingEmpty.remove();
+  
+  // Hide checkout grid by default
+  checkoutGrid.style.display = 'none';
+  
+  if (cart.length === 0) {
+    // Create and show empty cart message
+    const emptyCartDiv = document.createElement('div');
+    emptyCartDiv.id = 'empty-cart-message';
+    emptyCartDiv.className = 'text-center py-5';
+    emptyCartDiv.innerHTML = `
+      <i class="fas fa-shopping-cart fa-3x mb-3 text-secondary"></i>
+      <h2 class="mb-3">Your cart is empty.</h2>
+      <a href="shop.html" class="btn btn-primary btn-lg contShopping">Continue Shopping</a>
+    `;
+    checkoutMain.appendChild(emptyCartDiv);
+    return;
+  }
+  
+  // Show checkout grid when cart has items
+  checkoutGrid.style.display = 'grid';
+  
+  // Render cart items
   checkoutContainer.innerHTML = '';
   let subtotal = 0;
   let totalDiscount = 0;
-
-  if (cart.length === 0) {
-    checkoutContainer.innerHTML = `
-      <div class="empty-cart">
-        <i class="fas fa-shopping-cart"></i>
-        <p>Your cart is empty.</p>
-        <a href="index.html" class="continue-shopping">Continue Shopping</a>
-      </div>`;
-    totalElem.innerHTML = '';
-    confirmBtn.style.display = 'none';
-    return;
-  }
 
   cart.forEach(item => {
     const price = parseFloat(item.price);
@@ -303,6 +346,7 @@ function renderCheckout() {
     checkoutContainer.appendChild(div);
   });
 
+  // Calculate and display totals
   let delivery = subtotal >= freeDeliveryThreshold ? 0 : deliveryCharge;
   const total = (subtotal - totalDiscount) + delivery;
 
