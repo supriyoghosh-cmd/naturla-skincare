@@ -909,6 +909,7 @@ function renderPromoCodes() {
     promoList.appendChild(li);
   });
 
+  // Updated: Copy button only changes promo code input, DOES NOT call renderCheckout()
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       const code = this.dataset.code;
@@ -917,6 +918,7 @@ function renderPromoCodes() {
       input.focus();
       this.textContent = 'Copied!';
       setTimeout(() => this.textContent = 'Copy', 2000);
+      // No call to renderCheckout() here, so input fields keep their values
     });
   });
 }
@@ -937,14 +939,6 @@ function renderCheckout() {
       </div>`;
     totalElem.innerHTML = '';
     confirmBtn.style.display = 'none';
-
-    // Clear applied promo because cart is empty
-    appliedPromo = null;
-
-    // Keep promo input cleared as well
-    const promoInput = document.getElementById('promo-code');
-    if (promoInput) promoInput.value = '';
-
     return;
   }
 
@@ -1013,12 +1007,6 @@ function renderCheckout() {
     </div>`;
 
   renderPromoCodes();
-
-  // <<<--- FIX: Keep promo code input value intact after re-render
-  const promoInput = document.getElementById('promo-code');
-  if (promoInput) {
-    promoInput.value = appliedPromo || '';
-  }
 }
 
 // Estimate delivery date
@@ -1090,5 +1078,6 @@ confirmBtn.addEventListener('click', () => {
 });
 
 renderCheckout();
+
 
 
