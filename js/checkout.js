@@ -8,34 +8,6 @@
 // let deliveryCharge = 20.00;
 // const freeDeliveryThreshold = 300.00;
 
-// let appliedPromo = null;
-
-// const promoCodes = {
-//   "GLOW10": { type: "percent", value: 10, eligibleProducts: [1,2,3,4] },
-//   "HYDRA15": { type: "percent", value: 15, eligibleProducts: [5,6,7,8] },
-//   "BOOST20": { type: "flat", value: 20, eligibleProducts: [9,10,11,12] },
-//   "SUNSAFE": { type: "delivery", value: 100, eligibleProducts: [13,14,15,16] }
-// };
-
-// // Promo code Apply button — safe full render happens here
-// document.querySelector('.apply-btn')?.addEventListener('click', () => {
-//   const input = document.getElementById('promo-code');
-//   const code = input.value.trim().toUpperCase();
-
-//   if (!promoCodes[code]) {
-//     confirmMessage.textContent = '❌ Invalid promo code.';
-//     confirmMessage.style.color = 'var(--discount-color)';
-//     appliedPromo = null;
-//     renderCheckout();
-//     return;
-//   }
-
-//   appliedPromo = code;
-//   confirmMessage.textContent = `✅ Promo code "${code}" applied.`;
-//   confirmMessage.style.color = 'var(--success-color)';
-//   renderCheckout();
-// });
-
 // // Delivery option selection
 // deliveryOptions.forEach(option => {
 //   option.addEventListener('click', function () {
@@ -58,51 +30,10 @@
 //   this.value = this.value.replace(/\D/g, '').substring(0, 4);
 // });
 
-// // Render promo codes list and setup copy buttons WITHOUT re-rendering checkout UI
-// function renderPromoCodes() {
-//   const promoList = document.getElementById('promo-list');
-//   if (!promoList) return;
-
-//   promoList.innerHTML = '';
-
-//   Object.entries(promoCodes).forEach(([code, info]) => {
-//     const description = info.type === 'percent'
-//       ? `${info.value}% off`
-//       : info.type === 'flat'
-//         ? `$${info.value} off`
-//         : `Free Delivery`;
-
-//     const li = document.createElement('li');
-//     li.innerHTML = `
-//       <div class="promo-line">
-//         <strong>${code}</strong> - ${description}
-//         <button class="copy-btn" data-code="${code}">Copy</button>
-//       </div>
-//     `;
-//     promoList.appendChild(li);
-//   });
-
-//   // COPY button behavior: only update promo input, no full render
-//   document.querySelectorAll('.copy-btn').forEach(btn => {
-//     btn.addEventListener('click', function () {
-//       const code = this.dataset.code;
-//       const input = document.getElementById('promo-code');
-//       input.value = code;
-//       input.focus();
-
-//       this.textContent = 'Copied!';
-//       setTimeout(() => this.textContent = 'Copy', 2000);
-
-//       // NO renderCheckout() here — preserves input values!
-//     });
-//   });
-// }
-
 // function renderCheckout() {
 //   checkoutContainer.innerHTML = '';
 //   let subtotal = 0;
 //   let totalDiscount = 0;
-//   let promoDiscount = 0;
 
 //   if (cart.length === 0) {
 //     checkoutContainer.innerHTML = `
@@ -144,43 +75,19 @@
 //   });
 
 //   let delivery = subtotal >= freeDeliveryThreshold ? 0 : deliveryCharge;
-
-//   if (appliedPromo) {
-//     const promo = promoCodes[appliedPromo];
-//     const eligibleItems = cart.filter(item => promo.eligibleProducts.includes(item.id));
-
-//     const eligibleSubtotal = eligibleItems.reduce((sum, item) => {
-//       const price = parseFloat(item.price);
-//       const discount = item.discount || 0;
-//       const discountedPrice = price - (price * discount / 100);
-//       return sum + (discountedPrice * item.quantity);
-//     }, 0);
-
-//     if (promo.type === 'percent') {
-//       promoDiscount = (eligibleSubtotal * promo.value) / 100;
-//     } else if (promo.type === 'flat') {
-//       promoDiscount = Math.min(promo.value, eligibleSubtotal);
-//     } else if (promo.type === 'delivery') {
-//       if (eligibleItems.length > 0) delivery = 0;
-//     }
-//   }
-
-//   const total = (subtotal - totalDiscount - promoDiscount) + delivery;
+//   const total = (subtotal - totalDiscount) + delivery;
 
 //   totalElem.innerHTML = `
 //     <div class="price-summary">
 //       <div class="price-row"><span>Subtotal:</span><span>$${subtotal.toFixed(2)}</span></div>
 //       ${totalDiscount > 0 ? `<div class="price-row discount-row"><span>Discount:</span><span>-$${totalDiscount.toFixed(2)}</span></div>` : ''}
-//       ${promoDiscount > 0 ? `<div class="price-row promo-row"><span>Promo (${appliedPromo}):</span><span>-$${promoDiscount.toFixed(2)}</span></div>` : ''}
 //       <div class="price-row delivery-row"><span>Delivery:</span>
-//         <span>${delivery > 0 ? `$${delivery.toFixed(2)}` : 'FREE <span class="free-delivery-badge">($300+ or SUNSAFE)'}</span>
+//         <span>${delivery > 0 ? `$${delivery.toFixed(2)}` : 'FREE <span class="free-delivery-badge">($300+)'}</span>
 //       </div>
 //       <div class="price-row total-row"><span>Total:</span><span>$${total.toFixed(2)}</span></div>
 //       ${subtotal < freeDeliveryThreshold ? `<div class="free-delivery-notice"><i class="fas fa-truck"></i> Spend $${(freeDeliveryThreshold - subtotal).toFixed(2)} more for free delivery!</div>` : ''}
 //       <div class="estimated-delivery"><i class="fas fa-calendar-alt"></i> Estimated delivery: ${calculateDeliveryDate()}</div>
 //     </div>`;
-
-//   renderPromoCodes();
 // }
 
 // function calculateDeliveryDate() {
@@ -224,7 +131,7 @@
 //     total: document.querySelector('.total-row span:last-child').textContent,
 //     delivery: document.querySelector('.delivery-row span:last-child').textContent,
 //     estimatedDelivery: calculateDeliveryDate(),
-//     promoCode: appliedPromo || null,
+//     promoCode: null,
 //     customer: { name: cardName, email },
 //     shipping: {
 //       method: document.querySelector('.delivery-option.selected h4').textContent
@@ -249,11 +156,12 @@
 //   }, 1500);
 // });
 
-// // Initial render on page load
+// Initial render on page load
 // renderCheckout();
 
 
 
+// checkout.js
 const checkoutContainer = document.getElementById('checkout-container');
 const totalElem = document.getElementById('total-checkout-price');
 const confirmMessage = document.getElementById('confirmation-message');
@@ -275,16 +183,30 @@ deliveryOptions.forEach(option => {
   });
 });
 
-// Format inputs
+// Input restrictions
+
+document.getElementById('card-name')?.addEventListener('input', function () {
+  this.value = this.value.replace(/[0-9]/g, '');
+});
+
 document.getElementById('card-number')?.addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').substring(0, 19);
 });
+
 document.getElementById('expiry')?.addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '').replace(/(\d{2})(?=\d)/g, '$1/').substring(0, 5);
 });
+
 document.getElementById('cvv')?.addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '').substring(0, 4);
 });
+
+function isValidExpiry(expiry) {
+  if (!/^\d{2}\/\d{2}$/.test(expiry)) return false;
+  const [month, year] = expiry.split('/').map(Number);
+  const fullYear = 2000 + year;
+  return month >= 1 && month <= 12 && fullYear <= 2040 && fullYear >= new Date().getFullYear();
+}
 
 function renderCheckout() {
   checkoutContainer.innerHTML = '';
@@ -373,7 +295,13 @@ confirmBtn.addEventListener('click', () => {
     return;
   }
 
-  if (cardNumber.length < 16 || cvv.length < 3 || cvv.length > 4 || expiry.length !== 5) {
+  if (
+    cardNumber.length < 16 ||
+    cvv.length < 3 ||
+    cvv.length > 4 ||
+    expiry.length !== 5 ||
+    !isValidExpiry(expiry)
+  ) {
     confirmMessage.textContent = 'Please check your card details';
     confirmMessage.style.color = 'var(--discount-color)';
     return;
@@ -390,7 +318,7 @@ confirmBtn.addEventListener('click', () => {
     promoCode: null,
     customer: { name: cardName, email },
     shipping: {
-      method: document.querySelector('.delivery-option.selected h4').textContent
+      method: document.querySelector('.delivery-option.selected h4')?.textContent || 'Standard Delivery'
     }
   };
 
@@ -414,6 +342,7 @@ confirmBtn.addEventListener('click', () => {
 
 // Initial render on page load
 renderCheckout();
+
 
 
 
