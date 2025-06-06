@@ -14,6 +14,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/checkout.css" />
+
+  <style>
+    .form-group {
+  position: relative;
+}
+
+.form-group input.valid {
+  border: 2px solid #28a745; /* Green */
+}
+
+.form-group input.invalid {
+  border: 2px solid #dc3545; /* Red */
+}
+
+.form-group .validation-icon {
+  position: absolute;
+  right: 10px;
+  top: 38px;
+  font-size: 16px;
+}
+
+.form-group .validation-icon.valid {
+  color: #28a745;
+}
+
+.form-group .validation-icon.invalid {
+  color: #dc3545;
+}
+  </style>
 </head>
 <body>
   <header class="checkout-header">
@@ -73,14 +102,17 @@
           <div class="form-group">
             <label for="card-name">Name on Card</label>
             <input type="text" id="card-name" placeholder="John Smith" required>
+            <span class="validation-icon" id="icon-card-name"></span>
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" placeholder="your@email.com" required>
+            <span class="validation-icon" id="icon-email"></span>
           </div>
           <div class="form-group">
             <label for="card-number">Card Number</label>
             <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+            <span class="validation-icon" id="icon-card-number"></span>
             <div class="card-icons">
               <i class="fab fa-cc-visa"></i>
               <i class="fab fa-cc-mastercard"></i>
@@ -91,14 +123,16 @@
             <div class="form-group">
               <label for="expiry">Expiry Date</label>
               <input type="text" id="expiry" placeholder="MM/YY" required>
+              <span class="validation-icon" id="icon-expiry"></span>
             </div>
             <div class="form-group">
               <label for="cvv">CVV</label>
               <input type="text" id="cvv" placeholder="123" required>
+              <span class="validation-icon" id="icon-cvv"></span>
             </div>
           </div>
         </form>
-
+      
         <div class="order-total">
           <h3>Order Summary</h3>
           <div id="total-checkout-price"></div>

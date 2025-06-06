@@ -1,3 +1,4 @@
+// // checkout.js
 // const checkoutContainer = document.getElementById('checkout-container');
 // const totalElem = document.getElementById('total-checkout-price');
 // const confirmMessage = document.getElementById('confirmation-message');
@@ -19,16 +20,30 @@
 //   });
 // });
 
-// // Format inputs
+// // Input restrictions
+
+// document.getElementById('card-name')?.addEventListener('input', function () {
+//   this.value = this.value.replace(/[0-9]/g, '');
+// });
+
 // document.getElementById('card-number')?.addEventListener('input', function () {
 //   this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').substring(0, 19);
 // });
+
 // document.getElementById('expiry')?.addEventListener('input', function () {
 //   this.value = this.value.replace(/\D/g, '').replace(/(\d{2})(?=\d)/g, '$1/').substring(0, 5);
 // });
+
 // document.getElementById('cvv')?.addEventListener('input', function () {
 //   this.value = this.value.replace(/\D/g, '').substring(0, 4);
 // });
+
+// function isValidExpiry(expiry) {
+//   if (!/^\d{2}\/\d{2}$/.test(expiry)) return false;
+//   const [month, year] = expiry.split('/').map(Number);
+//   const fullYear = 2000 + year;
+//   return month >= 1 && month <= 12 && fullYear <= 2040 && fullYear >= new Date().getFullYear();
+// }
 
 // function renderCheckout() {
 //   checkoutContainer.innerHTML = '';
@@ -117,7 +132,13 @@
 //     return;
 //   }
 
-//   if (cardNumber.length < 16 || cvv.length < 3 || cvv.length > 4 || expiry.length !== 5) {
+//   if (
+//     cardNumber.length < 16 ||
+//     cvv.length < 3 ||
+//     cvv.length > 4 ||
+//     expiry.length !== 5 ||
+//     !isValidExpiry(expiry)
+//   ) {
 //     confirmMessage.textContent = 'Please check your card details';
 //     confirmMessage.style.color = 'var(--discount-color)';
 //     return;
@@ -134,7 +155,7 @@
 //     promoCode: null,
 //     customer: { name: cardName, email },
 //     shipping: {
-//       method: document.querySelector('.delivery-option.selected h4').textContent
+//       method: document.querySelector('.delivery-option.selected h4')?.textContent || 'Standard Delivery'
 //     }
 //   };
 
@@ -156,7 +177,7 @@
 //   }, 1500);
 // });
 
-// Initial render on page load
+// // Initial render on page load
 // renderCheckout();
 
 
@@ -183,22 +204,52 @@ deliveryOptions.forEach(option => {
   });
 });
 
-// Input restrictions
+// Input restrictions and validation
+function validateField(id, isValid) {
+  const input = document.getElementById(id);
+  const icon = document.getElementById(`icon-${id}`);
+  if (!input || !icon) return;
+
+  input.classList.remove('valid', 'invalid');
+  icon.classList.remove('valid', 'invalid');
+
+  if (isValid) {
+    input.classList.add('valid');
+    icon.classList.add('valid');
+    icon.innerHTML = '✔';
+  } else {
+    input.classList.add('invalid');
+    icon.classList.add('invalid');
+    icon.innerHTML = '✖';
+  }
+}
 
 document.getElementById('card-name')?.addEventListener('input', function () {
   this.value = this.value.replace(/[0-9]/g, '');
+  validateField('card-name', /^[A-Za-z\s]{2,}$/.test(this.value));
+});
+
+document.getElementById('email')?.addEventListener('input', function () {
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
+  validateField('email', valid);
 });
 
 document.getElementById('card-number')?.addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').substring(0, 19);
+  const valid = this.value.replace(/\s/g, '').length === 16;
+  validateField('card-number', valid);
 });
 
 document.getElementById('expiry')?.addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '').replace(/(\d{2})(?=\d)/g, '$1/').substring(0, 5);
+  const valid = isValidExpiry(this.value);
+  validateField('expiry', valid);
 });
 
 document.getElementById('cvv')?.addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '').substring(0, 4);
+  const valid = /^[0-9]{3,4}$/.test(this.value);
+  validateField('cvv', valid);
 });
 
 function isValidExpiry(expiry) {
@@ -342,7 +393,3 @@ confirmBtn.addEventListener('click', () => {
 
 // Initial render on page load
 renderCheckout();
-
-
-
-
