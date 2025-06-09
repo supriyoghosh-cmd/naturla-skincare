@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentCategory = "all"; 
   let currentSort = "default"; 
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchKeyword = urlParams.get('search')?.toLowerCase() || null;
+
   updateCartCount();
 
   fetch("products.json")
@@ -14,7 +17,30 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then((products) => {
       allProducts = products;
-      renderAllProducts(allProducts);
+
+      if (searchKeyword) {
+        allProducts = products.filter(p =>
+          p.name.toLowerCase().includes(searchKeyword) ||
+          p.category?.toLowerCase().includes(searchKeyword)
+        );
+        currentCategory = "all"; // Disable tabs filtering
+        renderAllProducts(sortProducts(allProducts, currentSort));
+
+        const searchNotice = document.getElementById("search-result-label");
+        if (searchNotice) {
+          searchNotice.textContent = `Search results for: "${searchKeyword}"`;
+          searchNotice.style.display = 'block';
+        }
+
+        const tabs = document.getElementById('category-tab-wrapper');
+        if (tabs) tabs.style.display = 'none';
+        const tabsWrap = document.getElementById('categoryTabs');
+        if (tabsWrap) tabsWrap.style.display = 'none';
+        const mobileSelect = document.getElementById('mobile-category-select');
+        if (mobileSelect) mobileSelect.style.display = 'none';
+      } else {
+        renderAllProducts(allProducts);
+      }
 
       // Setup filter event listener
       const filterSelect = document.getElementById('filter-select');
@@ -29,12 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const categoryTabs = document.querySelectorAll('#categoryTabs .nav-link');
       categoryTabs.forEach(tab => {
         tab.addEventListener('click', function() {
+          if (searchKeyword) return false;
           categoryTabs.forEach(t => t.classList.remove('active'));
           this.classList.add('active');
           currentCategory = this.dataset.category;
           applyFilters();
-          
-          // Update mobile dropdown
+
           const mobileSelect = document.getElementById('mobile-category-select');
           if (mobileSelect) {
             mobileSelect.value = currentCategory;
@@ -46,10 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const mobileCategorySelect = document.getElementById('mobile-category-select');
       if (mobileCategorySelect) {
         mobileCategorySelect.addEventListener('change', function() {
+          if (searchKeyword) return;
           currentCategory = this.value;
           applyFilters();
-          
-          // Update active tab
+
           categoryTabs.forEach(tab => {
             tab.classList.remove('active');
             if (tab.dataset.category === currentCategory) {
@@ -65,21 +91,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function applyFilters() {
     let filteredProducts = [...allProducts];
-    
-    // Apply category filter
-    if (currentCategory !== "all") {
+
+    if (!searchKeyword && currentCategory !== "all") {
       filteredProducts = filteredProducts.filter(p => p.category === currentCategory);
     }
-    
-    // Apply sort filter
+
     filteredProducts = sortProducts(filteredProducts, currentSort);
-    
     renderAllProducts(filteredProducts);
   }
 
   function sortProducts(products, sortType) {
     let sorted = [...products];
-    
+
     switch (sortType) {
       case 'discount':
         sorted = sorted.filter(p => p.discount > 0)
@@ -103,10 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
         sorted.sort((a, b) => b.rating - a.rating);
         break;
       default:
-        // No sorting, use original order
         break;
     }
-    
+
     return sorted;
   }
 
@@ -116,8 +138,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.innerHTML = '';
 
+    if (!products.length) {
+      container.innerHTML = '<p class="text-center">No products found.</p>';
+      return;
+    }
+
     products.forEach(p => {
-      container.appendChild(createProductCard(p));
+      const card = createProductCard(p);
+      card.classList.add("fade-in");
+      container.appendChild(card);
     });
   }
 
@@ -129,9 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ? `<span class="discounted-price">$${discountPrice}</span><span class="original-price">$${p.price.toFixed(2)}</span>`
       : `<span class="price">$${p.price.toFixed(2)}</span>`;
 
-    const badge = discounted
-      ? `<div class="discount-badge">-${p.discount}%</div>`
-      : "";
+    const badge = discounted ? `<div class="discount-badge">-${p.discount}%</div>` : "";
 
     const card = document.createElement("div");
     card.innerHTML = `
@@ -221,8 +248,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Add event listener for pageshow to update cart count when navigating back
   window.addEventListener('pageshow', function (event) {
     updateCartCount();
   });
 });
+
+
+

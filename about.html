@@ -98,55 +98,67 @@
   <body>
     <!-- HEADER SECTION -->
     <nav class="navbar bg-white border-bottom">
-        <div class="container d-flex justify-content-between align-items-center">
-          <!-- Brand -->
-          <a class="navbar-brand" href="index.html">
-            <img src="./images/logo-new.png" alt="Logo">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">
+          <img src="./images/logo-new.png" alt="Logo">
+        </a>
+  
+        <!-- Desktop Nav -->
+        <div class="d-none d-lg-flex nav_menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </div>
+  
+        <!-- Right Icons -->
+        <div class="d-flex align-items-center">
+          <img src="./images/magnifying-glass.svg" id="search-btn" class="searchHeader" alt="search">
+          <div id="search-overlay" class="search_block">
+            <div class="centered">
+              <div id='search-box'>
+                <i id="close-btn" class="fa fa-times fa"></i>
+                <form action='/search' id="global-search-form" class="search-form" method='get' target='_top'>
+                  <input id="global-search-input" placeholder="Search products..." type='text' />
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- <img src="./images/magnifying-glass.svg" class="searchHeader" alt="search"> -->
+          <a href="javascript:void(0)" class="icon-btn position-relative" onclick="toggleWishlistSidebar()">
+            <img src="./images/heart.svg" class="wishList" alt="wishlist">
+            <div class="cart-badge" id="wishlist-info"></div>
           </a>
-    
-          <!-- Desktop Nav -->
-          <div class="d-none d-lg-flex nav_menu">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="shop.html" class="nav-link">Shop</a>
-            <a href="about.html" class="nav-link">About Us</a>
-            <a href="contact.html" class="nav-link">Contact Us</a>
-          </div>
-    
-          <!-- Right Icons -->
-          <div class="d-flex align-items-center">
-            <!-- <img src="./images/magnifying-glass.svg" class="searchHeader" alt="search"> -->
-            <a href="javascript:void(0)" class="icon-btn position-relative" onclick="toggleWishlistSidebar()">
-              <img src="./images/heart.svg" class="wishList" alt="wishlist">
-              <div class="cart-badge" id="wishlist-info"></div>
-            </a>
-            <a href="cart.html" class="icon-btn position-relative">
-              <img src="./images/shopping-cart-simple.svg" alt="cart">
-              <div class="cart-badge" id="cart-info"></div>
-            </a>
-            <!-- Hamburger (Mobile Only) -->
-            <button class="hamburger ms-3" onclick="toggleSidebar()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
+          <a href="cart.html" class="icon-btn position-relative">
+            <img src="./images/shopping-cart-simple.svg" alt="cart">
+            <div class="cart-badge" id="cart-info"></div>
+          </a>
+          <!-- Hamburger (Mobile Only) -->
+          <button class="hamburger ms-3" onclick="toggleSidebar()">
+              <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
-      </nav>
-    
-      <!-- Sidebar -->
-      <div class="sidebar" id="sidebarMenu">
-        <div class="d-flex justify-content-end">
-          <span class="close-btn" id="closeSidebarBtn">
-            <i class="fa-solid fa-xmark"></i>
-          </span>
-        </div>
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
       </div>
+    </nav>
+  
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebarMenu">
+      <div class="d-flex justify-content-end">
+        <span class="close-btn" id="closeSidebarBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+      </div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+    </div>
 
-      <!-- Overlay -->
-      <div class="overlay" id="sidebarOverlay"></div>
-    <!-- HEADER SECTION end -->
+    <!-- Overlay -->
+    <div class="overlay" id="sidebarOverlay"></div>
+  <!-- HEADER SECTION end -->
 
     <!-- About Banner start -->
      <section class="about_banner">

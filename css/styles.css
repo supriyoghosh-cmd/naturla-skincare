@@ -132,7 +132,7 @@ a.navbar-brand img {
   width: 100%;
 }
 img.searchHeader {
-  max-width: 30px;
+  max-width: 25px;
   width: 100%;
 }
 
@@ -345,7 +345,7 @@ div#cart-info {
 }
 
 .shop-btn {
-  background-color: #d50000;
+  background-color: #cf0115;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 999px;
@@ -1202,6 +1202,108 @@ section.discountArea {
   }
 }
 
+/* Search animation start */
+#search-btn {
+  position: relative;
+  border-radius: 2px;
+  color: #000000;
+}
+#search-overlay {
+  display: none;
+}
+.search_block {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  text-align: center;
+  background: #000000f0;
+  border: #a0a0a0 solid 1px;
+  margin: 0;
+  height: 100vh;
+  z-index: 999;
+}
+.search_block:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: 0;
+}
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  padding: 10px 15px;
+  color: #fff;
+  border: none;
+  background: transparent;
+}
+i#close-btn {
+  position: fixed;
+  right: 60px;
+  top: 60px;
+  font-size: 2rem;
+}
+input#global-search-input {
+  width: 100%;
+  padding: 15px;
+  padding-left: 51px;
+  border-radius: 50px;
+  outline: 0;
+  border: 0;
+  position: relative;
+}
+form#global-search-form {
+  position: relative;
+}
+form#global-search-form button {
+  position: absolute;
+  border: 0;
+  outline: 0;
+  background: none;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 21px;
+  line-height: 1;
+}
+form#global-search-form button i {
+  font-size: 1.2rem;
+  color: #afafaf;
+}
+/* Search animation end */
+
+/* Scroll to top start */
+a#scroll {
+  width: 50px;
+  height: 50px;
+  background-color: #cf0115;
+  display: inline-block;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+#scroll span {
+  position: absolute;
+  top: 50%;
+  /* right: 50%; */
+  height: 0;
+  width: 0;
+  /* margin-left: -9px; */
+  /* margin-top: -5px; */
+  border-bottom: 10px solid #fff;
+  left: 50%;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: translate(-50%, -50%);
+}
+/* Scroll to top end */
+
 /* ======================= Responsive css =================== */
 
 @media (max-width: 1199.98px) {
@@ -1347,6 +1449,11 @@ section.discountArea {
   }
   .navbar {
     padding: 10px 0;
+  }
+
+  .centered {
+    width: 80%;
+    padding: 0;
   }
 
   .achievement-box {

@@ -199,3 +199,43 @@ navbar.addEventListener('animationend', function () {
   this.style.animation = '';
 });
 
+// search //
+document.getElementById('global-search-form')?.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const input = document.getElementById('global-search-input');
+  const keyword = input?.value?.trim();
+  if (keyword) {
+    window.location.href = `shop.html?search=${encodeURIComponent(keyword)}`;
+  }
+});
+
+
+$(document).ready(function() {
+  $('#close-btn').click(function() {
+    $('#search-overlay').fadeOut();
+    $('#search-btn').show();
+    $('body').css('overflow', 'unset');
+  });
+  $('#search-btn').click(function() {
+    $(this).hide();
+    $('#search-overlay').fadeIn();
+    $('body').css('overflow', 'hidden');
+  });
+});
+
+
+// Scroll to top //
+$(document).ready(function(){
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 2000) {
+      $("#scroll").fadeIn();
+      } else {
+      $("#scroll").fadeOut();
+    }
+  });
+  
+  $("#scroll").click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 900);
+    return false;
+  });
+});

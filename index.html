@@ -113,6 +113,18 @@
     
           <!-- Right Icons -->
           <div class="d-flex align-items-center">
+            <img src="./images/magnifying-glass.svg" id="search-btn" class="searchHeader" alt="search">
+            <div id="search-overlay" class="search_block">
+              <div class="centered">
+                <div id='search-box'>
+                  <i id="close-btn" class="fa fa-times fa"></i>
+                  <form action='/search' id="global-search-form" class="search-form" method='get' target='_top'>
+                    <input id="global-search-input" placeholder="Search products..." type='text' />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
             <!-- <img src="./images/magnifying-glass.svg" class="searchHeader" alt="search"> -->
             <a href="javascript:void(0)" class="icon-btn position-relative" onclick="toggleWishlistSidebar()">
               <img src="./images/heart.svg" class="wishList" alt="wishlist">
@@ -551,6 +563,8 @@
       </div>
   </div>
   <div class="overlay" id="overlay" onclick="toggleWishlistSidebar()"></div>
+
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
     
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
